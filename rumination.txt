@@ -1,0 +1,7 @@
+in memory (until page reload)
+in cookies (until cookie cleanup)
+in local storage (until LS cleared)
+in local file (need to backup/sync it)
+in a file on server (until dyno restarts from repo)
+in mongo db cloud
+in google sheets
