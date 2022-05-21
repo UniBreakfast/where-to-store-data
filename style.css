@@ -25,6 +25,10 @@ ul {
   margin: 5px 0 -5px;
 }
 
+#addItemForm :is(label, input) {
+  max-width: 96%;
+}
+
 #addItemForm [name="num"] {
   width: 85px;
   text-align: center;
@@ -88,4 +92,10 @@ ul {
 
 #itemList button {
   padding: 0;
+}
+
+@media (max-width: 280px) {
+  #itemList .text {
+    min-width: 100%;
+  }
 }
