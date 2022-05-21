@@ -1,7 +1,10 @@
-in memory (until page reload)
+in DOM (right in the elements themselves)
+in data-structure in browser memory (until page reloads)
 in cookies (until cookie cleanup)
-in local storage (until LS cleared)
-in local file (need to backup/sync it)
-in a file on server (until dyno restarts from repo)
-in mongo db cloud
+in local storage (until it is cleared)
+in local file (to backup to and restore from it manually)
+in data-structure in server memory (until server restarts)
+in a file on the server (JSON, CSV, XML etc.)
+in a data base (mongo db, mySQL, postgreSQL, Firebase etc.)
 in google sheets
+in a cloud git repo?
