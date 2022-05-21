@@ -1,0 +1,74 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#wrapper {
+  text-align: center;
+}
+
+#addItemForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  border: 4px solid antiquewhite;
+  border-radius: 6px;
+  max-width: max(700px, 80%);
+  margin: 20px auto;
+  box-sizing: border-box;
+  padding: 0 5px 10px;
+}
+
+#addItemForm h2 {
+  width: 100%;
+  margin: 5px;
+}
+
+#addItemForm [name="num"] {
+  width: 85px;
+}
+
+#itemList {
+  max-width: max(700px, 80%);
+  margin: 20px auto;
+}
+
+#itemList>li {
+  display: flex;
+  background: antiquewhite;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+}
+
+#itemList cell:not(.text) {
+  flex-shrink: 0;
+}
+
+#itemList :is(.pos, .id, .flag) {
+  width: 32px;
+}
+
+#itemList .text {
+  text-align: left;
+}
+
+#itemList :is(.num, .date) {
+  width: 80px;
+}
+
+#itemList .btns {
+  padding: 6px;
+  transition: 300ms;
+}
+
+#itemList>li:not(:hover) .btns {
+  opacity: 0.3;
+}
+
+#itemList button {
+  padding: 0;
+}
