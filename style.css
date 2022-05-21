@@ -29,7 +29,7 @@ ul {
   max-width: 96%;
 }
 
-#addItemForm [name="num"] {
+#addItemForm [name="number"] {
   width: 85px;
   text-align: center;
 }
