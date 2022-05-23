@@ -29,7 +29,7 @@ ul {
   max-width: 96%;
 }
 
-#addItemForm [name="number"] {
+#addItemForm [name="num"] {
   width: 85px;
   text-align: center;
 }
@@ -41,17 +41,37 @@ ul {
 
 #itemList>li {
   display: flex;
-  background: #eee;
+  background: #eaeaea;
   border-radius: 6px;
   margin-bottom: 10px;
   align-items: center;
   gap: 0 6px;
   padding: 4px 8px;
   flex-wrap: wrap;
+  overflow: hidden;
+}
+
+#itemList>:nth-child(odd) {
+  background: #f8f8f8;
 }
 
 #itemList cell {
   padding: 6px 0;
+  position: relative;
+}
+
+#itemList cell:nth-child(even)::after {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1111;
+  pointer-events: none;
+  border-radius: 6px;
+  backdrop-filter: grayscale(1);
 }
 
 #itemList cell:not(.text) {
@@ -59,9 +79,12 @@ ul {
   flex-grow: 1;
 }
 
-#itemList :is(.index, .id, .flag) {
+#itemList :is(.index, .id, .flag),
+#itemList :is(.index, .id, .flag):nth-child(even)::after {
   width: 32px;
 }
+
+
 
 #itemList .text {
   text-align: left;
@@ -76,7 +99,8 @@ ul {
   margin: 0;
 }
 
-#itemList :is(.num, .date) {
+#itemList :is(.num, .date),
+#itemList :is(.num, .date):nth-child(even)::after {
   width: 80px;
 }
 
