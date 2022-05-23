@@ -1,7 +1,7 @@
 const addItemForm = document.getElementById('addItemForm')
 const itemList = document.getElementById('itemList')
 
-const handlers = {handleCheck, handleEdit, handleRemove }
+const handlers = { handleCheck, handleEdit, handleSave, handleRemove }
 
 addItemForm.onsubmit = () => {
   const inputData = getFormData()
@@ -13,6 +13,8 @@ addItemForm.onsubmit = () => {
 }
 
 itemList.onclick = event => {
+  if (event.target == itemList) return
+
   const targetLike = classifyTarget(event.target)
 
   handlers[targetLike]?.(event.target.closest('li'))
@@ -77,8 +79,16 @@ function classifyTarget(el) {
   } else if (el.classList.contains('del-btn')) {
     return 'handleRemove'
 
-  } else if (!el.classList.contains('btns')) {
-    return 'handleCheck'
+  } else if (
+    el.type != 'checkbox' &&
+    !el.classList.contains('btns') &&
+    el.contentEditable != 'true'
+  ) {
+    if (el.closest('li').classList.contains('editable')) {
+      return 'handleSave'
+    } else {
+      return 'handleCheck'
+    }
   }
 }
 
@@ -88,9 +98,21 @@ function handleRemove(li) {
 }
 
 function handleCheck(li) {
-  li.querySelector('[type="checkbox"]').toggleAttribute('checked')
+  const box = li.querySelector('[type="checkbox"]')
+  box.checked = !box.checked
 }
 
 function handleEdit(li) {
+  const elems = li.querySelectorAll('p, .num, .date')
 
+  elems.forEach(el => el.contentEditable = true)
+  elems[0].focus()
+  li.classList.add('editable')
+}
+
+function handleSave(li) {
+  const elems = li.querySelectorAll('p, .num, .date')
+
+  elems.forEach(el => el.contentEditable = false)
+  li.classList.remove('editable')
 }

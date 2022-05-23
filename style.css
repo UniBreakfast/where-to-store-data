@@ -74,6 +74,10 @@ ul {
   backdrop-filter: grayscale(1);
 }
 
+#itemList>.editable>.date::after {
+  content: none;
+}
+
 #itemList cell:not(.text) {
   flex-shrink: 0;
   flex-grow: 1;
@@ -84,7 +88,11 @@ ul {
   width: 32px;
 }
 
-
+#itemList>.editable :is(p, .num, .date) {
+  background: #fff;
+  border: 1px solid #777;
+  border-radius: 2px;
+}
 
 #itemList .text {
   text-align: left;
