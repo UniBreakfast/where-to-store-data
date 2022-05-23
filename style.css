@@ -43,7 +43,7 @@ ul {
   display: flex;
   background: #eaeaea;
   border-radius: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   align-items: center;
   gap: 0 6px;
   padding: 4px 8px;
@@ -60,7 +60,7 @@ ul {
   position: relative;
 }
 
-#itemList cell:nth-child(even)::after {
+#itemList cell:is(.id, .flag, .date)::after {
   content: '';
   display: block;
   height: 100%;
@@ -84,13 +84,14 @@ ul {
 }
 
 #itemList :is(.index, .id, .flag),
-#itemList :is(.index, .id, .flag):nth-child(even)::after {
+#itemList :is(.index, .id, .flag)::after {
   width: 32px;
 }
 
 #itemList>.editable :is(p, .num, .date) {
   background: #fff;
   border: 1px solid #777;
+  box-sizing: border-box;
   border-radius: 2px;
 }
 
@@ -105,11 +106,21 @@ ul {
 
 #itemList .text>p {
   margin: 0;
+  padding: 0 3px 1px;
+  border: 1px solid transparent;
 }
 
 #itemList :is(.num, .date),
-#itemList :is(.num, .date):nth-child(even)::after {
+#itemList :is(.num, .date)::after {
   width: 80px;
+}
+
+#itemList .flag {
+  order: 1;
+}
+
+#itemList :is(.num, .date, .btns) {
+  order: 2;
 }
 
 #itemList .btns {
