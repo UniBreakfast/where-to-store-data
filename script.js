@@ -114,7 +114,10 @@ function handleEdit(li) {
       el.onblur = () => {
         const newValue = el.innerText
 
-        if (el.classList.contains('num')) {
+        if (el.parentNode.classList.contains('text')) {
+          el.parentNode.scrollTop = 0
+
+        } else if (el.classList.contains('num')) {
           el.innerText = getValidNumber(newValue, value)
 
         } else if (el.classList.contains('date')) {

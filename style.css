@@ -3,6 +3,14 @@ ul {
   padding: 0;
 }
 
+p {
+  margin: 0;
+}
+
+[type="checkbox"] {
+  filter: grayscale(1);
+}
+
 #wrapper {
   text-align: center;
 }
@@ -71,7 +79,6 @@ ul {
   background: #1111;
   pointer-events: none;
   border-radius: 6px;
-  backdrop-filter: grayscale(1);
 }
 
 #itemList>.editable>.date::after {
@@ -88,11 +95,12 @@ ul {
   width: 32px;
 }
 
-#itemList>.editable :is(p, .num, .date) {
+#itemList>.editable :is(.text, .num, .date) {
   background: #fff;
   border: 1px solid #777;
   box-sizing: border-box;
   border-radius: 2px;
+  overflow: auto;
 }
 
 #itemList .text {
@@ -102,11 +110,9 @@ ul {
   min-width: 220px;
   max-width: calc(100% - 360px);
   flex-grow: 99999;
-}
-
-#itemList .text>p {
-  margin: 0;
   padding: 0 3px 1px;
+  box-sizing: border-box;
+  margin: 6px 0;
   border: 1px solid transparent;
 }
 
