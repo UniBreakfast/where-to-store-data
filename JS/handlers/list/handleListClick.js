@@ -1,5 +1,5 @@
-import { classifyTarget } from "../logic/classifyTarget.js"
-import { handlers } from "./handlers.js"
+import { classifyTarget } from "../../logic/classifyTarget.js"
+import { handlers } from "../handlers.js"
 
 function handleListClick(event) {
   if (event.target == itemList) return

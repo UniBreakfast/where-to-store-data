@@ -1,4 +1,4 @@
-import { handleSave } from "./handleSave.js"
+import { handleSave } from "../list/handleSave.js"
 
 function makeHandleFocusoutEditing(li, elems) {
   return onfocusout

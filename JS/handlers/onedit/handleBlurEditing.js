@@ -1,5 +1,5 @@
-import { getValidNumber } from "../validation/getValidNumber.js"
-import { getValidDate } from "../validation/getValidDate.js"
+import { getValidNumber } from "../../validation/getValidNumber.js"
+import { getValidDate } from "../../validation/getValidDate.js"
 
 function makeHandleBlurEditing(el, value) {
   return () => {

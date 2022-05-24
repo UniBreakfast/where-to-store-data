@@ -1,7 +1,5 @@
-import { makeHandleFocusEditing } from "./handleFocusEditing.js"
-import { makeHandleFocusoutEditing } from "./handleFocusoutEditing.js"
-
-export { handleEdit }
+import { makeHandleFocusEditing } from "../onedit/handleFocusEditing.js"
+import { makeHandleFocusoutEditing } from "../onedit/handleFocusoutEditing.js"
 
 function handleEdit(li) {
   const elems = li.querySelectorAll('p, .num, .date')
@@ -17,3 +15,5 @@ function handleEdit(li) {
 
   li.addEventListener('focusout', makeHandleFocusoutEditing(li, elems))
 }
+
+export { handleEdit }

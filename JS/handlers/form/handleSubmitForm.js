@@ -1,7 +1,7 @@
 import { getFormData } from "./getFormData.js"
-import { genId } from "../generators/genId.js"
-import { updateListIndices } from "../logic/updateListIndices.js"
-import { addItem } from "./addItem.js"
+import { genId } from "../../generators/genId.js"
+import { updateListIndices } from "../../logic/updateListIndices.js"
+import { addItem } from "../list/addItem.js"
 
 function handleSubmitForm() {
   const inputData = getFormData()

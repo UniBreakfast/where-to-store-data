@@ -1,4 +1,4 @@
-import { itemList } from "../elements/itemList.js"
+import { itemList } from "../../elements/itemList.js"
 
 function addItem(item) {
   const { id, text, flag, num, date } = item

@@ -1,4 +1,4 @@
-import { addItemForm } from "../elements/addItemForm.js"
+import { addItemForm } from "../../elements/addItemForm.js"
 
 function getFormData() {
   const formData = new FormData(addItemForm)
