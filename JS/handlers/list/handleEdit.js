@@ -5,7 +5,7 @@ function handleEdit(li) {
   const elems = li.querySelectorAll('p, .num, .date')
 
   elems.forEach(el => {
-    el.contentEditable = true
+    el.setAttribute('contenteditable', '')
 
     el.onfocus = makeHandleFocusEditing(el)
   })

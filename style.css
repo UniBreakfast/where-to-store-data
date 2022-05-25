@@ -105,7 +105,7 @@ p {
 
 #itemList .text {
   text-align: left;
-  max-height: 96px;
+  max-height: 88px;
   overflow: hidden;
   min-width: 220px;
   max-width: calc(100% - 360px);
@@ -118,7 +118,7 @@ p {
 
 #itemList :is(.num, .date),
 #itemList :is(.num, .date)::after {
-  width: 80px;
+  width: 83px;
 }
 
 #itemList .flag {
@@ -129,7 +129,7 @@ p {
   order: 2;
 }
 
-#itemList .num {
+#itemList .num:not([contenteditable]) {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -139,6 +139,8 @@ p {
   padding: 6px;
   transition: 300ms;
   text-align: right;
+  margin-left: auto;
+  flex-grow: 0.01;
 }
 
 #itemList>li:not(:hover) .btns {
