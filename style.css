@@ -129,6 +129,12 @@ p {
   order: 2;
 }
 
+#itemList .num {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 #itemList .btns {
   padding: 6px;
   transition: 300ms;
